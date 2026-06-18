@@ -121,7 +121,19 @@ h1{ font-size: clamp(2rem, 1.35rem + 3vw, 3.1rem); }
   padding: 0.95rem 0;
   gap: 1rem;
 }
-.brand__logo{ height: 34px; width: auto; }
+
+/* ---------- Brand (nome textual) ---------- */
+.brand__name{
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.03em;
+  background: linear-gradient(90deg, #88D498, #F3E9D2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1;
+}
 
 .nav{ position: relative; }
 .nav__toggle{
@@ -187,7 +199,7 @@ h1{ font-size: clamp(2rem, 1.35rem + 3vw, 3.1rem); }
   .nav__menu a{ display:inline-flex; }
 }
 
-/* ---------- Buttons + microinteractions ---------- */
+/* ---------- Buttons ---------- */
 .btn{
   display:inline-flex;
   align-items:center;
@@ -556,6 +568,21 @@ input:focus{
 @media (min-width: 900px){
   .footer__grid{ grid-template-columns: 1.1fr 0.7fr 1.2fr; }
 }
+
+/* Nome textual no footer */
+.footer__brand{
+  display: block;
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: -0.03em;
+  background: linear-gradient(90deg, #88D498, #F3E9D2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: .55rem;
+}
+
 .footer__title{
   font-size: 1.05rem;
   margin-bottom: .6rem;
