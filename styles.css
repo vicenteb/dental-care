@@ -15,7 +15,6 @@
 *, *::before, *::after { box-sizing: border-box; }
 
 :root {
-  /* Cores */
   --teal-dark : #0b2730;
   --teal      : #114B5F;
   --green     : #1A936F;
@@ -28,12 +27,10 @@
   --ink-2     : #3a3a3a;
   --ink-muted : #6b7280;
 
-  /* Tipografia */
   --font-title : "Montserrat", system-ui, sans-serif;
   --font-sub   : "Lora", Georgia, serif;
   --font-body  : "Hind Madurai", system-ui, sans-serif;
 
-  /* Espaçamentos / outros */
   --container  : 1120px;
   --radius     : 16px;
   --radius-sm  : 10px;
@@ -136,7 +133,7 @@ h3 { font-size: 1.1rem; font-weight: 600; }
   margin-bottom: 2.4rem;
 }
 
-/* Label tag (acima do título) */
+/* Label tag */
 .label-tag {
   display: inline-block;
   font-family: var(--font-title);
@@ -235,11 +232,6 @@ h3 { font-size: 1.1rem; font-weight: 600; }
 }
 .nav__menu a:hover { background: var(--off-white); color: var(--teal); }
 
-/* Força o texto branco no botão do topo */
-.nav__menu .btn--primary {
-  color: #fff !important;
-}
-
 .nav__menu.open { display: block; }
 
 @media (min-width: 900px) {
@@ -286,6 +278,7 @@ h3 { font-size: 1.1rem; font-weight: 600; }
 .btn--primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 32px rgba(26,147,111,0.28);
+  color: #fff;
 }
 
 .btn--ghost {
