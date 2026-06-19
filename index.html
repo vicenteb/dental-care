@@ -11,7 +11,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Lora:wght@400;500;600&family=Hind+Madurai:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Hind+Madurai:wght@400;500;600&display=swap">
 
   <link rel="stylesheet" href="./styles.css" />
 
@@ -32,7 +32,6 @@
     "url": "https://www.seudominio.com.br/",
     "telephone": "+55-51-0000-0000",
     "priceRange": "R$300–R$500",
-    "image": "https://www.seudominio.com.br/og-image.jpg",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Rua Exemplo, 123",
@@ -40,15 +39,6 @@
       "addressRegion": "RS",
       "postalCode": "00000-000",
       "addressCountry": "BR"
-    },
-    "areaServed": {
-      "@type": "City",
-      "name": "Porto Alegre"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": -30.0346,
-      "longitude": -51.2177
     },
     "openingHoursSpecification": [
       {
@@ -71,7 +61,7 @@
   }
   </script>
 
-  <!-- Meta Pixel (substitua PIXEL_ID) -->
+  <!-- Meta Pixel -->
   <script>
     !(function(f,b,e,v,n,t,s){
       if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -93,7 +83,7 @@
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-  <!-- HEADER -->
+  <!-- ░░ HEADER ░░ -->
   <header class="header">
     <div class="container header__inner">
       <a class="brand" href="#" aria-label="Dental Care — início">
@@ -119,26 +109,26 @@
 
   <main id="conteudo">
 
-    <!-- HERO -->
-    <section class="hero" aria-label="Apresentação">
+    <!-- ░░ HERO — fundo escuro ░░ -->
+    <section class="hero section--dark" aria-label="Apresentação">
       <div class="container hero__grid">
         <div class="hero__content">
-          <p class="eyebrow">Odontologia estética avançada • Porto Alegre</p>
-          <h1>Conheça nossos tratamentos estéticos e <span class="accent">marque sua consulta online</span> com praticidade.</h1>
+          <p class="eyebrow">Odontologia estética avançada · Porto Alegre</p>
+          <h1>Um sorriso natural,<br><span class="accent">planejado com tecnologia.</span></h1>
           <p class="lead">
-            Uma clínica elegante, clean e super tecnológica para você conquistar um sorriso natural — com planejamento digital,
-            previsibilidade e conforto.
+            Clínica elegante e tecnológica para você conquistar o sorriso que sempre quis —
+            com previsibilidade, conforto e resultado natural.
           </p>
 
           <div class="hero__ctas">
             <a class="btn btn--primary" href="#agendar" data-track="cta_hero_agendar">Agendar consulta</a>
-            <a class="btn btn--ghost" href="#tecnologias" data-track="cta_hero_tecnologias">Ver tecnologias</a>
+            <a class="btn btn--ghost" href="#servicos" data-track="cta_hero_servicos">Ver serviços</a>
           </div>
 
           <ul class="trust-row" aria-label="Diferenciais rápidos">
             <li><span class="dot"></span> Atendimento premium</li>
             <li><span class="dot"></span> Planejamento digital</li>
-            <li><span class="dot"></span> Foco em estética natural</li>
+            <li><span class="dot"></span> Estética natural</li>
           </ul>
         </div>
 
@@ -148,7 +138,6 @@
               <div class="pill">Tecnologia & Estética</div>
               <div class="spark"></div>
             </div>
-
             <div class="kpis">
               <div class="kpi">
                 <div class="kpi__num">+3.2k</div>
@@ -160,141 +149,101 @@
               </div>
               <div class="kpi">
                 <div class="kpi__num">0h</div>
-                <div class="kpi__label">Fila: agende online</div>
+                <div class="kpi__label">Fila de espera</div>
               </div>
             </div>
-
             <div class="mini-tech">
               <div class="mini-tech__item">Escaneamento intraoral</div>
-              <div class="mini-tech__item">DSD (Sorriso digital)</div>
+              <div class="mini-tech__item">DSD — Sorriso digital</div>
               <div class="mini-tech__item">Fotografia clínica</div>
             </div>
           </div>
-
           <div class="hero__glow"></div>
         </div>
       </div>
     </section>
 
-    <!-- PROVA SOCIAL + SELOS -->
-    <section class="section" id="depoimentos" aria-label="Prova social">
+    <!-- ░░ SERVIÇOS — fundo branco ░░ -->
+    <section class="section section--light" id="servicos" aria-label="Serviços em destaque">
       <div class="container">
         <div class="section__head">
-          <h2>Resultados que parecem naturais — e são planejados com tecnologia</h2>
-          <p class="subtitle">Depoimentos reais (exemplos). Substitua por nomes/prints autorizados.</p>
-        </div>
-
-        <div class="cards cards--3">
-          <article class="card">
-            <p class="card__quote">"Fiz clareamento e alinhamento estético. A experiência foi super premium e o resultado ficou discreto e lindo."</p>
-            <div class="card__meta">
-              <strong>Marina A.</strong>
-              <span>31 anos</span>
-            </div>
-          </article>
-
-          <article class="card">
-            <p class="card__quote">"O planejamento digital me deu muita segurança. Eu sabia exatamente o que esperar antes de começar."</p>
-            <div class="card__meta">
-              <strong>Rafael C.</strong>
-              <span>29 anos</span>
-            </div>
-          </article>
-
-          <article class="card">
-            <p class="card__quote">"Atendimento impecável. Ambiente clean, tecnologia e um cuidado real com conforto e tempo."</p>
-            <div class="card__meta">
-              <strong>Camila P.</strong>
-              <span>37 anos</span>
-            </div>
-          </article>
-        </div>
-
-        <div class="seals" aria-label="Selos e confiança">
-          <div class="seal">🔒 Checkout/Contato seguro (HTTPS)</div>
-          <div class="seal">🧾 LGPD: dados usados só para atendimento</div>
-          <div class="seal">⭐ Avaliações verificadas</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVIÇOS -->
-    <section class="section section--alt" id="servicos" aria-label="Serviços em destaque">
-      <div class="container">
-        <div class="section__head">
-          <h2>Serviços em destaque</h2>
-          <p class="subtitle">Tratamentos estéticos com ticket médio de R$ 300 a 500 — com foco em previsibilidade e acabamento natural.</p>
+          <p class="label-tag">Serviços</p>
+          <h2>Tratamentos pensados para o seu sorriso</h2>
+          <p class="subtitle">Foco em estética, previsibilidade e acabamento natural. Ticket médio de R$ 300 a R$ 500.</p>
         </div>
 
         <div class="service-grid">
           <article class="service">
             <div class="service__icon" aria-hidden="true">◎</div>
             <h3>Clareamento premium</h3>
-            <p>Protocolos modernos com acompanhamento, sensibilidade reduzida e estética natural.</p>
-            <a class="link" href="#agendar" data-track="svc_clareamento_agendar">Quero avaliar meu caso →</a>
+            <p>Protocolos modernos com sensibilidade reduzida e resultado discreto e duradouro.</p>
+            <a class="link" href="#agendar" data-track="svc_clareamento">Avaliar meu caso →</a>
           </article>
 
           <article class="service">
             <div class="service__icon" aria-hidden="true">◈</div>
-            <h3>Lentes/Facetas estéticas</h3>
-            <p>Design do sorriso com planejamento digital e escolha de forma/tonalidade com precisão.</p>
-            <a class="link" href="#agendar" data-track="svc_facetas_agendar">Agendar planejamento →</a>
+            <h3>Lentes e Facetas</h3>
+            <p>Design do sorriso com planejamento digital e escolha precisa de forma e tonalidade.</p>
+            <a class="link" href="#agendar" data-track="svc_facetas">Agendar planejamento →</a>
           </article>
 
           <article class="service">
             <div class="service__icon" aria-hidden="true">⌁</div>
             <h3>Harmonização do sorriso</h3>
-            <p>Ajustes estéticos e funcionais para equilíbrio, simetria e confiança ao sorrir.</p>
-            <a class="link" href="#agendar" data-track="svc_harm_agendar">Ver opções →</a>
+            <p>Equilíbrio, simetria e confiança. Ajustes estéticos e funcionais com precisão.</p>
+            <a class="link" href="#agendar" data-track="svc_harm">Ver opções →</a>
           </article>
 
-          <article class="service service--cta">
-            <h3>Veja resultados e bastidores</h3>
-            <p>Antes e depois, tecnologias, processos e conteúdos de cuidados.</p>
-            <a class="btn btn--secondary" href="https://www.instagram.com/dentalcare" target="_blank" rel="noopener noreferrer" data-track="cta_instagram">
-              Ver nosso Instagram
+          <article class="service service--highlight">
+            <h3>Resultados e bastidores</h3>
+            <p>Antes e depois, tecnologias e conteúdos de cuidado no nosso Instagram.</p>
+            <a class="btn btn--dark" href="https://www.instagram.com/dentalcare" target="_blank" rel="noopener noreferrer" data-track="cta_instagram">
+              Ver Instagram
             </a>
-            <small class="hint">Dica: use link-in-bio para agendamento.</small>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- VALORES + TECNOLOGIAS -->
-    <section class="section" id="tecnologias" aria-label="Valores e tecnologias">
+    <!-- ░░ TECNOLOGIAS — fundo escuro ░░ -->
+    <section class="section section--dark" id="tecnologias" aria-label="Tecnologias e valores">
       <div class="container">
         <div class="section__head">
-          <h2>Nossos valores (e por que isso importa no seu resultado)</h2>
-          <p class="subtitle">Sustentabilidade, atendimento e as últimas tecnologias aplicadas à estética dental.</p>
+          <p class="label-tag label-tag--light">Diferenciais</p>
+          <h2>Por que isso importa no seu resultado</h2>
+          <p class="subtitle">Tecnologia, atendimento e sustentabilidade a serviço da sua estética.</p>
         </div>
 
         <div class="values">
           <article class="value">
+            <div class="value__icon">🌱</div>
             <h3>Sustentabilidade</h3>
-            <p>Processos digitais que reduzem desperdício, melhoram previsibilidade e otimizam tempo clínico.</p>
+            <p>Fluxos digitais que reduzem desperdício e melhoram a previsibilidade do tratamento.</p>
             <ul class="bullets">
-              <li>Fluxos com documentação digital</li>
+              <li>Documentação 100% digital</li>
               <li>Materiais e protocolos conscientes</li>
-              <li>Eficiência sem perder qualidade</li>
+              <li>Eficiência sem abrir mão da qualidade</li>
             </ul>
           </article>
 
           <article class="value">
+            <div class="value__icon">✦</div>
             <h3>Atendimento premium</h3>
-            <p>Você é atendido(a) com escuta ativa e plano claro — do diagnóstico ao pós.</p>
+            <p>Escuta ativa, plano transparente e acompanhamento do diagnóstico ao pós-tratamento.</p>
             <ul class="bullets">
-              <li>Orientação objetiva e transparente</li>
+              <li>Orientação objetiva e clara</li>
               <li>Conforto e pontualidade</li>
               <li>Acompanhamento pós-tratamento</li>
             </ul>
           </article>
 
           <article class="value">
+            <div class="value__icon">⬡</div>
             <h3>Últimas tecnologias</h3>
-            <p>Precisão e previsibilidade para estética avançada (indicadas conforme seu caso).</p>
+            <p>Precisão e previsibilidade para estética avançada, indicadas conforme seu caso.</p>
             <ul class="bullets">
-              <li>Escaneamento intraoral (moldagem digital)</li>
-              <li>DSD/planejamento do sorriso</li>
+              <li>Escaneamento intraoral digital</li>
+              <li>DSD — planejamento do sorriso</li>
               <li>Fotografia clínica e simulação</li>
             </ul>
           </article>
@@ -302,68 +251,151 @@
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="section section--alt" id="faq" aria-label="Perguntas frequentes">
+    <!-- ░░ DEPOIMENTOS — fundo branco ░░ -->
+    <section class="section section--light" id="depoimentos" aria-label="Depoimentos">
       <div class="container">
         <div class="section__head">
-          <h2>FAQ</h2>
-          <p class="subtitle">Respostas rápidas para você decidir com segurança.</p>
+          <p class="label-tag">Depoimentos</p>
+          <h2>Resultados que falam por si</h2>
+          <p class="subtitle">Experiências reais de quem confiou no nosso trabalho.</p>
+        </div>
+
+        <div class="cards cards--3">
+
+          <article class="card">
+            <div class="card__stars" aria-label="5 estrelas">★★★★★</div>
+            <p class="card__quote">"Fiz clareamento e alinhamento estético. A experiência foi super premium e o resultado ficou discreto e lindo."</p>
+            <div class="card__person">
+              <img
+                class="card__avatar"
+                src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=80&h=80&fit=crop&crop=face"
+                alt="Foto de Marina A."
+                width="48"
+                height="48"
+                loading="lazy"
+                decoding="async"
+              />
+              <div>
+                <strong class="card__name">Marina A.</strong>
+                <span class="card__age">31 anos</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__stars" aria-label="5 estrelas">★★★★★</div>
+            <p class="card__quote">"O planejamento digital me deu muita segurança. Eu sabia exatamente o que esperar antes de começar o tratamento."</p>
+            <div class="card__person">
+              <img
+                class="card__avatar"
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face"
+                alt="Foto de Rafael C."
+                width="48"
+                height="48"
+                loading="lazy"
+                decoding="async"
+              />
+              <div>
+                <strong class="card__name">Rafael C.</strong>
+                <span class="card__age">29 anos</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__stars" aria-label="5 estrelas">★★★★★</div>
+            <p class="card__quote">"Atendimento impecável. Ambiente clean, tecnologia e um cuidado real com conforto e com o meu tempo."</p>
+            <div class="card__person">
+              <img
+                class="card__avatar"
+                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face"
+                alt="Foto de Camila P."
+                width="48"
+                height="48"
+                loading="lazy"
+                decoding="async"
+              />
+              <div>
+                <strong class="card__name">Camila P.</strong>
+                <span class="card__age">37 anos</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="seals">
+          <div class="seal">🔒 Contato seguro (HTTPS)</div>
+          <div class="seal">🧾 LGPD — dados só para atendimento</div>
+          <div class="seal">⭐ Avaliações verificadas</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ FAQ — fundo escuro ░░ -->
+    <section class="section section--dark" id="faq" aria-label="Perguntas frequentes">
+      <div class="container">
+        <div class="section__head">
+          <p class="label-tag label-tag--light">FAQ</p>
+          <h2>Dúvidas frequentes</h2>
+          <p class="subtitle">Respostas diretas para você decidir com segurança.</p>
         </div>
 
         <div class="faq" data-accordion>
           <details class="faq__item">
             <summary>Como funciona o agendamento online?</summary>
             <div class="faq__content">
-              <p>Você preenche seus dados e nossa equipe confirma pelo WhatsApp com as opções de horários e orientações pré-consulta.</p>
+              <p>Você preenche seus dados e nossa equipe confirma pelo WhatsApp com opções de horário e orientações pré-consulta.</p>
             </div>
           </details>
 
           <details class="faq__item">
             <summary>O planejamento digital é indicado para quais tratamentos?</summary>
             <div class="faq__content">
-              <p>É muito útil em clareamento orientado, facetas/lentes, reanatomizações e alinhamentos estéticos — especialmente quando queremos previsibilidade.</p>
+              <p>É muito útil em clareamento orientado, facetas/lentes, reanatomizações e alinhamentos estéticos — sempre que queremos previsibilidade e segurança.</p>
             </div>
           </details>
 
           <details class="faq__item">
             <summary>Quanto tempo leva para ver resultado?</summary>
             <div class="faq__content">
-              <p>Depende do protocolo: alguns resultados são rápidos (clareamento), enquanto outros exigem etapas (planejamento, provas, finalização).</p>
+              <p>Depende do protocolo: alguns resultados são imediatos (clareamento), outros exigem etapas — planejamento, provas e finalização.</p>
             </div>
           </details>
 
           <details class="faq__item">
-            <summary>Existe alguma avaliação antes de fechar o tratamento?</summary>
+            <summary>Existe avaliação antes de fechar o tratamento?</summary>
             <div class="faq__content">
-              <p>Sim. A consulta avalia saúde bucal, estética desejada e viabilidade clínica. A partir disso, montamos um plano transparente.</p>
+              <p>Sim. A consulta avalia saúde bucal, estética desejada e viabilidade clínica. A partir disso, montamos um plano transparente e sem surpresas.</p>
             </div>
           </details>
 
           <details class="faq__item">
             <summary>Vocês atendem convênios?</summary>
             <div class="faq__content">
-              <p>Trabalhamos com foco em tratamentos estéticos avançados. Se desejar, informe seu convênio e verificamos possibilidades de reembolso.</p>
+              <p>Trabalhamos com foco em tratamentos estéticos avançados. Informe seu convênio e verificamos possibilidades de reembolso.</p>
             </div>
           </details>
         </div>
       </div>
     </section>
 
-    <!-- FORM CAPTURA -->
-    <section class="section" id="agendar" aria-label="Agendar consulta">
+    <!-- ░░ FORM — fundo branco ░░ -->
+    <section class="section section--light" id="agendar" aria-label="Agendar consulta">
       <div class="container">
         <div class="capture">
           <div class="capture__copy">
-            <h2>Agende sua consulta e receba um direcionamento do melhor caminho para seu sorriso</h2>
+            <p class="label-tag">Agendamento</p>
+            <h2>Agende sua consulta e descubra o melhor caminho para o seu sorriso</h2>
             <p class="subtitle">
-              Preencha os dados e nossa equipe retorna pelo WhatsApp com horários disponíveis.
+              Preencha os dados e retornamos pelo WhatsApp com horários disponíveis.
               Seus dados são usados somente para contato (LGPD).
             </p>
 
             <div class="capture__benefits">
               <div class="chip">✓ Retorno rápido</div>
               <div class="chip">✓ Plano com clareza</div>
-              <div class="chip">✓ Tecnologia aplicada ao seu caso</div>
+              <div class="chip">✓ Tecnologia no seu caso</div>
             </div>
           </div>
 
@@ -405,7 +437,7 @@
 
   </main>
 
-  <!-- FOOTER -->
+  <!-- ░░ FOOTER ░░ -->
   <footer class="footer" aria-label="Rodapé">
     <div class="container footer__grid">
       <div>
@@ -425,7 +457,7 @@
       <div id="politica">
         <h3 class="footer__title">Política de privacidade</h3>
         <p class="footer__text">
-          Coletamos apenas nome, e-mail e WhatsApp para retornar seu contato e agendar sua consulta.
+          Coletamos apenas nome, e-mail e WhatsApp para agendar sua consulta.
           Não vendemos seus dados. Você pode solicitar exclusão a qualquer momento.
         </p>
       </div>
@@ -433,7 +465,7 @@
 
     <div class="container footer__bottom">
       <small>© <span id="year"></span> Dental Care. Todos os direitos reservados.</small>
-      <small>Porto Alegre • RS</small>
+      <small>Porto Alegre · RS</small>
     </div>
   </footer>
 
