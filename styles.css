@@ -10,7 +10,7 @@
    --white     : #FFFFFF
    --off-white : #F8FAF9
    --ink       : #1a1a1a
-=============================================== */
+================================================ */
 
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -234,6 +234,12 @@ h3 { font-size: 1.1rem; font-weight: 600; }
   transition: background .12s;
 }
 .nav__menu a:hover { background: var(--off-white); color: var(--teal); }
+
+/* Força o texto branco no botão do topo */
+.nav__menu .btn--primary {
+  color: #fff !important;
+}
+
 .nav__menu.open { display: block; }
 
 @media (min-width: 900px) {
