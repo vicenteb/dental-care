@@ -6,29 +6,27 @@
   <meta name="theme-color" content="#114B5F" />
 
   <title>Dental Care — Odontologia Estética Avançada | Agende Online</title>
-  <meta name="description" content="Clínica odontológica elegante e tecnológica, focada em tratamentos avançados de odontologia estética. Agende sua consulta online e conheça nossas tecnologias." />
+  <meta name="description" content="Clínica odontológica elegante e tecnológica, focada em tratamentos avançados de odontologia estética. Agende sua consulta online." />
   <link rel="canonical" href="https://www.seudominio.com.br/" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Hind+Madurai:wght@400;500;600&display=swap">
 
-  <link rel="stylesheet" href="./styles.css" />
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="styles.css" />
 
-  <!-- Open Graph -->
   <meta property="og:title" content="Dental Care — Odontologia Estética Avançada" />
   <meta property="og:description" content="Agende online e conheça tecnologias avançadas para estética dental." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.seudominio.com.br/" />
-  <meta property="og:image" content="https://www.seudominio.com.br/og-image.jpg" />
 
-  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": ["Dentist","LocalBusiness","MedicalBusiness"],
     "name": "Dental Care",
-    "description": "Clínica odontológica elegante, clean e super tecnológica, focada em odontologia estética avançada.",
+    "description": "Clínica odontológica elegante, clean e tecnológica, focada em odontologia estética avançada.",
     "url": "https://www.seudominio.com.br/",
     "telephone": "+55-51-0000-0000",
     "priceRange": "R$300–R$500",
@@ -53,31 +51,9 @@
         "opens": "09:00",
         "closes": "13:00"
       }
-    ],
-    "sameAs": [
-      "https://www.instagram.com/dentalcare",
-      "https://www.facebook.com/dentalcare"
     ]
   }
   </script>
-
-  <!-- Meta Pixel -->
-  <script>
-    !(function(f,b,e,v,n,t,s){
-      if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)
-    })(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'PIXEL_ID');
-    fbq('track', 'PageView');
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=PIXEL_ID&ev=PageView&noscript=1" />
-  </noscript>
 </head>
 
 <body>
@@ -101,7 +77,7 @@
           <a href="#tecnologias">Tecnologias</a>
           <a href="#depoimentos">Depoimentos</a>
           <a href="#faq">FAQ</a>
-          <a class="btn btn--primary btn--sm" href="#agendar" data-track="cta_header_agendar">Agendar online</a>
+          <a class="btn btn--primary btn--sm" href="#agendar">Agendar online</a>
         </div>
       </nav>
     </div>
@@ -109,22 +85,21 @@
 
   <main id="conteudo">
 
-    <!-- ░░ HERO — fundo escuro ░░ -->
+    <!-- ░░ HERO ░░ -->
     <section class="hero section--dark" aria-label="Apresentação">
       <div class="container hero__grid">
-        <div class="hero__content">
+
+        <div class="hero__content" data-reveal>
           <p class="eyebrow">Odontologia estética avançada · Porto Alegre</p>
           <h1>Um sorriso natural,<br><span class="accent">planejado com tecnologia.</span></h1>
           <p class="lead">
             Clínica elegante e tecnológica para você conquistar o sorriso que sempre quis —
             com previsibilidade, conforto e resultado natural.
           </p>
-
           <div class="hero__ctas">
-            <a class="btn btn--primary" href="#agendar" data-track="cta_hero_agendar">Agendar consulta</a>
-            <a class="btn btn--ghost" href="#servicos" data-track="cta_hero_servicos">Ver serviços</a>
+            <a class="btn btn--primary" href="#agendar">Agendar consulta</a>
+            <a class="btn btn--ghost"   href="#servicos">Ver serviços</a>
           </div>
-
           <ul class="trust-row" aria-label="Diferenciais rápidos">
             <li><span class="dot"></span> Atendimento premium</li>
             <li><span class="dot"></span> Planejamento digital</li>
@@ -132,10 +107,10 @@
           </ul>
         </div>
 
-        <div class="hero__visual" aria-hidden="true">
+        <div class="hero__visual" aria-hidden="true" data-reveal data-reveal-delay="2">
           <div class="glass-card">
             <div class="glass-card__top">
-              <div class="pill">Tecnologia & Estética</div>
+              <div class="pill">Tecnologia &amp; Estética</div>
               <div class="spark"></div>
             </div>
             <div class="kpis">
@@ -160,44 +135,45 @@
           </div>
           <div class="hero__glow"></div>
         </div>
+
       </div>
     </section>
 
-    <!-- ░░ SERVIÇOS — fundo branco ░░ -->
-    <section class="section section--light" id="servicos" aria-label="Serviços em destaque">
+    <!-- ░░ SERVIÇOS ░░ -->
+    <section class="section section--light" id="servicos" aria-label="Serviços">
       <div class="container">
-        <div class="section__head">
+        <div class="section__head" data-reveal>
           <p class="label-tag">Serviços</p>
           <h2>Tratamentos pensados para o seu sorriso</h2>
           <p class="subtitle">Foco em estética, previsibilidade e acabamento natural. Ticket médio de R$ 300 a R$ 500.</p>
         </div>
 
         <div class="service-grid">
-          <article class="service">
+          <article class="service" data-reveal>
             <div class="service__icon" aria-hidden="true">◎</div>
             <h3>Clareamento premium</h3>
             <p>Protocolos modernos com sensibilidade reduzida e resultado discreto e duradouro.</p>
-            <a class="link" href="#agendar" data-track="svc_clareamento">Avaliar meu caso →</a>
+            <a class="link" href="#agendar">Avaliar meu caso →</a>
           </article>
 
-          <article class="service">
+          <article class="service" data-reveal data-reveal-delay="1">
             <div class="service__icon" aria-hidden="true">◈</div>
             <h3>Lentes e Facetas</h3>
             <p>Design do sorriso com planejamento digital e escolha precisa de forma e tonalidade.</p>
-            <a class="link" href="#agendar" data-track="svc_facetas">Agendar planejamento →</a>
+            <a class="link" href="#agendar">Agendar planejamento →</a>
           </article>
 
-          <article class="service">
+          <article class="service" data-reveal data-reveal-delay="2">
             <div class="service__icon" aria-hidden="true">⌁</div>
             <h3>Harmonização do sorriso</h3>
             <p>Equilíbrio, simetria e confiança. Ajustes estéticos e funcionais com precisão.</p>
-            <a class="link" href="#agendar" data-track="svc_harm">Ver opções →</a>
+            <a class="link" href="#agendar">Ver opções →</a>
           </article>
 
-          <article class="service service--highlight">
+          <article class="service service--highlight" data-reveal data-reveal-delay="3">
             <h3>Resultados e bastidores</h3>
             <p>Antes e depois, tecnologias e conteúdos de cuidado no nosso Instagram.</p>
-            <a class="btn btn--dark" href="https://www.instagram.com/dentalcare" target="_blank" rel="noopener noreferrer" data-track="cta_instagram">
+            <a class="btn btn--dark" href="https://www.instagram.com/dentalcare" target="_blank" rel="noopener noreferrer">
               Ver Instagram
             </a>
           </article>
@@ -205,17 +181,17 @@
       </div>
     </section>
 
-    <!-- ░░ TECNOLOGIAS — fundo escuro ░░ -->
-    <section class="section section--dark" id="tecnologias" aria-label="Tecnologias e valores">
+    <!-- ░░ TECNOLOGIAS ░░ -->
+    <section class="section section--dark" id="tecnologias" aria-label="Tecnologias">
       <div class="container">
-        <div class="section__head">
+        <div class="section__head" data-reveal>
           <p class="label-tag label-tag--light">Diferenciais</p>
           <h2>Por que isso importa no seu resultado</h2>
           <p class="subtitle">Tecnologia, atendimento e sustentabilidade a serviço da sua estética.</p>
         </div>
 
         <div class="values">
-          <article class="value">
+          <article class="value" data-reveal>
             <div class="value__icon">🌱</div>
             <h3>Sustentabilidade</h3>
             <p>Fluxos digitais que reduzem desperdício e melhoram a previsibilidade do tratamento.</p>
@@ -226,7 +202,7 @@
             </ul>
           </article>
 
-          <article class="value">
+          <article class="value" data-reveal data-reveal-delay="1">
             <div class="value__icon">✦</div>
             <h3>Atendimento premium</h3>
             <p>Escuta ativa, plano transparente e acompanhamento do diagnóstico ao pós-tratamento.</p>
@@ -237,7 +213,7 @@
             </ul>
           </article>
 
-          <article class="value">
+          <article class="value" data-reveal data-reveal-delay="2">
             <div class="value__icon">⬡</div>
             <h3>Últimas tecnologias</h3>
             <p>Precisão e previsibilidade para estética avançada, indicadas conforme seu caso.</p>
@@ -251,30 +227,23 @@
       </div>
     </section>
 
-    <!-- ░░ DEPOIMENTOS — fundo branco ░░ -->
+    <!-- ░░ DEPOIMENTOS ░░ -->
     <section class="section section--light" id="depoimentos" aria-label="Depoimentos">
       <div class="container">
-        <div class="section__head">
+        <div class="section__head" data-reveal>
           <p class="label-tag">Depoimentos</p>
           <h2>Resultados que falam por si</h2>
           <p class="subtitle">Experiências reais de quem confiou no nosso trabalho.</p>
         </div>
 
         <div class="cards cards--3">
-
-          <article class="card">
+          <article class="card" data-reveal>
             <div class="card__stars" aria-label="5 estrelas">★★★★★</div>
             <p class="card__quote">"Fiz clareamento e alinhamento estético. A experiência foi super premium e o resultado ficou discreto e lindo."</p>
             <div class="card__person">
-              <img
-                class="card__avatar"
+              <img class="card__avatar"
                 src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=80&h=80&fit=crop&crop=face"
-                alt="Foto de Marina A."
-                width="48"
-                height="48"
-                loading="lazy"
-                decoding="async"
-              />
+                alt="Foto de Marina A." width="48" height="48" loading="lazy" decoding="async" />
               <div>
                 <strong class="card__name">Marina A.</strong>
                 <span class="card__age">31 anos</span>
@@ -282,19 +251,13 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="card" data-reveal data-reveal-delay="1">
             <div class="card__stars" aria-label="5 estrelas">★★★★★</div>
             <p class="card__quote">"O planejamento digital me deu muita segurança. Eu sabia exatamente o que esperar antes de começar o tratamento."</p>
             <div class="card__person">
-              <img
-                class="card__avatar"
+              <img class="card__avatar"
                 src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face"
-                alt="Foto de Rafael C."
-                width="48"
-                height="48"
-                loading="lazy"
-                decoding="async"
-              />
+                alt="Foto de Rafael C." width="48" height="48" loading="lazy" decoding="async" />
               <div>
                 <strong class="card__name">Rafael C.</strong>
                 <span class="card__age">29 anos</span>
@@ -302,29 +265,22 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="card" data-reveal data-reveal-delay="2">
             <div class="card__stars" aria-label="5 estrelas">★★★★★</div>
             <p class="card__quote">"Atendimento impecável. Ambiente clean, tecnologia e um cuidado real com conforto e com o meu tempo."</p>
             <div class="card__person">
-              <img
-                class="card__avatar"
+              <img class="card__avatar"
                 src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face"
-                alt="Foto de Camila P."
-                width="48"
-                height="48"
-                loading="lazy"
-                decoding="async"
-              />
+                alt="Foto de Camila P." width="48" height="48" loading="lazy" decoding="async" />
               <div>
                 <strong class="card__name">Camila P.</strong>
                 <span class="card__age">37 anos</span>
               </div>
             </div>
           </article>
-
         </div>
 
-        <div class="seals">
+        <div class="seals" data-reveal>
           <div class="seal">🔒 Contato seguro (HTTPS)</div>
           <div class="seal">🧾 LGPD — dados só para atendimento</div>
           <div class="seal">⭐ Avaliações verificadas</div>
@@ -332,16 +288,16 @@
       </div>
     </section>
 
-    <!-- ░░ FAQ — fundo escuro ░░ -->
+    <!-- ░░ FAQ ░░ -->
     <section class="section section--dark" id="faq" aria-label="Perguntas frequentes">
       <div class="container">
-        <div class="section__head">
+        <div class="section__head" data-reveal>
           <p class="label-tag label-tag--light">FAQ</p>
           <h2>Dúvidas frequentes</h2>
           <p class="subtitle">Respostas diretas para você decidir com segurança.</p>
         </div>
 
-        <div class="faq" data-accordion>
+        <div class="faq" data-reveal>
           <details class="faq__item">
             <summary>Como funciona o agendamento online?</summary>
             <div class="faq__content">
@@ -380,18 +336,18 @@
       </div>
     </section>
 
-    <!-- ░░ FORM — fundo branco ░░ -->
+    <!-- ░░ FORMULÁRIO ░░ -->
     <section class="section section--light" id="agendar" aria-label="Agendar consulta">
       <div class="container">
         <div class="capture">
-          <div class="capture__copy">
+
+          <div class="capture__copy" data-reveal>
             <p class="label-tag">Agendamento</p>
             <h2>Agende sua consulta e descubra o melhor caminho para o seu sorriso</h2>
             <p class="subtitle">
               Preencha os dados e retornamos pelo WhatsApp com horários disponíveis.
               Seus dados são usados somente para contato (LGPD).
             </p>
-
             <div class="capture__benefits">
               <div class="chip">✓ Retorno rápido</div>
               <div class="chip">✓ Plano com clareza</div>
@@ -399,7 +355,7 @@
             </div>
           </div>
 
-          <form class="form" id="leadForm" autocomplete="on" novalidate>
+          <form class="form" id="leadForm" autocomplete="on" novalidate data-reveal data-reveal-delay="1">
             <div class="field">
               <label for="nome">Nome</label>
               <input id="nome" name="nome" type="text" placeholder="Seu nome" autocomplete="name" required />
@@ -419,7 +375,7 @@
             </div>
 
             <div class="form__actions">
-              <button class="btn btn--primary btn--block" type="submit" data-track="form_submit">
+              <button class="btn btn--primary btn--block" type="submit">
                 Quero agendar online
               </button>
               <p class="fineprint">
@@ -431,6 +387,7 @@
               <strong>Perfeito!</strong> Recebemos seus dados. Em instantes, vamos te chamar no WhatsApp.
             </div>
           </form>
+
         </div>
       </div>
     </section>
@@ -469,6 +426,7 @@
     </div>
   </footer>
 
-  <script src="./script.js" defer></script>
+  <!-- JS externo — carregado no final do body -->
+  <script src="script.js"></script>
 </body>
 </html>
