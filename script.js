@@ -9,6 +9,28 @@
   const yearEl = $("#year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  // Premium header state
+  const header = $(".header");
+  if (header) {
+    let scrollTicking = false;
+    const updateHeader = () => {
+      header.classList.toggle("is-scrolled", window.scrollY > 12);
+    };
+    const requestHeaderUpdate = () => {
+      if (scrollTicking) return;
+      scrollTicking = true;
+      window.requestAnimationFrame(() => {
+        updateHeader();
+        scrollTicking = false;
+      });
+    };
+
+    updateHeader();
+    window.addEventListener("scroll", requestHeaderUpdate, { passive: true });
+  }
+
   // Mobile menu
   const toggle = $(".nav__toggle");
   const menu = $("#menu");
@@ -33,6 +55,72 @@
       a.addEventListener("click", () => setExpanded(false))
     );
   }
+
+  // Scroll reveal motion
+  const setupRevealMotion = () => {
+    if (prefersReducedMotion.matches || !("IntersectionObserver" in window)) return;
+
+    const mark = (el, type, delay = 0) => {
+      if (!el || el.dataset.reveal) return;
+      el.dataset.reveal = type;
+      el.style.setProperty("--reveal-delay", `${delay}ms`);
+    };
+
+    const markAll = (selector, type, { delay = 0, stagger = 80, root = document } = {}) => {
+      $$(selector, root).forEach((el, index) => mark(el, type, delay + index * stagger));
+    };
+
+    mark($(".hero .eyebrow"), "badge", 60);
+    mark($(".hero h1"), "heading", 150);
+    mark($(".hero .lead"), "text", 240);
+    mark($(".hero__ctas"), "text", 330);
+    mark($(".trust-row"), "text", 420);
+    mark($(".hero__visual"), "media", 300);
+
+    $$(".section__head").forEach((head) => {
+      mark($(".label-tag", head), "badge", 0);
+      mark($("h2", head), "heading", 90);
+      mark($(".subtitle", head), "text", 170);
+    });
+
+    markAll(".service-grid .service", "card", { stagger: 90 });
+    markAll(".values .value", "card", { stagger: 100 });
+    markAll(".cards .card", "card", { stagger: 100 });
+    markAll(".faq .faq__item", "card", { stagger: 70 });
+    markAll(".seals .seal", "text", { delay: 80, stagger: 50 });
+
+    const capture = $("#agendar .capture");
+    if (capture) {
+      mark($(".capture__copy .label-tag", capture), "badge", 0);
+      mark($(".capture__copy h2", capture), "heading", 90);
+      mark($(".capture__copy .subtitle", capture), "text", 170);
+      markAll(".capture__benefits .chip", "text", { delay: 250, stagger: 60, root: capture });
+      mark($(".form", capture), "form", 170);
+    }
+
+    markAll(".footer__grid > *", "text", { stagger: 80 });
+    mark($(".footer__bottom"), "text", 120);
+
+    document.documentElement.classList.add("motion-ready");
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        window.setTimeout(() => {
+          entry.target.classList.add("reveal-complete");
+        }, 1400);
+        observer.unobserve(entry.target);
+      });
+    }, {
+      rootMargin: "0px 0px -12% 0px",
+      threshold: 0.12,
+    });
+
+    $$("[data-reveal]").forEach((el) => revealObserver.observe(el));
+  };
+
+  setupRevealMotion();
 
   // Accordion: allow only one open (optional)
   const acc = document.querySelector("[data-accordion]");
