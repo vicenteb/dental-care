@@ -305,6 +305,31 @@ h3 { font-size: 1.1rem; font-weight: 600; }
 .btn--sm  { padding: .62rem .95rem; font-size: .88rem; border-radius: 10px; }
 .btn--block { width: 100%; }
 
+.nav__menu .btn {
+  display: inline-flex;
+  padding: .62rem .95rem;
+  border-radius: 10px;
+  font-weight: 600;
+}
+.nav__menu .btn--primary {
+  background: linear-gradient(135deg, var(--green) 0%, var(--teal) 100%);
+  color: #fff;
+  box-shadow: 0 6px 22px rgba(26,147,111,0.22);
+}
+.nav__menu .btn--primary:hover {
+  background: linear-gradient(135deg, var(--green) 0%, var(--teal) 100%);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(26,147,111,0.28);
+}
+
+@media (max-width: 899px) {
+  .nav__menu .btn {
+    width: 100%;
+    margin-top: .25rem;
+  }
+}
+
 /* ---------- HERO ---------- */
 .hero { padding: 5rem 0 4rem; }
 

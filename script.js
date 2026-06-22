@@ -3,9 +3,33 @@
 
 (function () {
   const $ = (sel, root = document) => root.querySelector(sel);
-  const $$
-= (sel, root = document) => [...root.querySelectorAll(sel)]; // Year const yearEl = $("#year"); if (yearEl) yearEl.textContent = new Date().getFullYear(); // Mobile menu const toggle = $(".nav__toggle"); const menu = $("#menu"); if (toggle && menu) { const setExpanded = (expanded) => { toggle.setAttribute("aria-expanded", String(expanded)); menu.classList.toggle("open", expanded); }; toggle.addEventListener("click", () => { const expanded = toggle.getAttribute("aria-expanded") === "true"; setExpanded(!expanded); }); document.addEventListener("click", (e) => { if (!menu.classList.contains("open")) return; const within = menu.contains(e.target) || toggle.contains(e.target); if (!within) setExpanded(false); }); // Close on link click
-$$("#menu a").forEach((a) =>
+  const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
+
+  // Year
+  const yearEl = $("#year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // Mobile menu
+  const toggle = $(".nav__toggle");
+  const menu = $("#menu");
+  if (toggle && menu) {
+    const setExpanded = (expanded) => {
+      toggle.setAttribute("aria-expanded", String(expanded));
+      menu.classList.toggle("open", expanded);
+    };
+
+    toggle.addEventListener("click", () => {
+      const expanded = toggle.getAttribute("aria-expanded") === "true";
+      setExpanded(!expanded);
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!menu.classList.contains("open")) return;
+      const within = menu.contains(e.target) || toggle.contains(e.target);
+      if (!within) setExpanded(false);
+    });
+
+    $$("#menu a").forEach((a) =>
       a.addEventListener("click", () => setExpanded(false))
     );
   }
