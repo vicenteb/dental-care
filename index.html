@@ -109,56 +109,147 @@
 
   <main id="conteudo">
 
-    <!-- ░░ HERO — fundo escuro ░░ -->
-    <section class="hero section--dark" aria-label="Apresentação">
-      <div class="container hero__grid">
-        <div class="hero__content">
-          <p class="eyebrow">Odontologia estética avançada · Porto Alegre</p>
-          <h1>Um sorriso natural,<br><span class="accent">planejado com tecnologia.</span></h1>
-          <p class="lead">
-            Clínica elegante e tecnológica para você conquistar o sorriso que sempre quis —
-            com previsibilidade, conforto e resultado natural.
-          </p>
-
-          <div class="hero__ctas">
-            <a class="btn btn--primary" href="#agendar" data-track="cta_hero_agendar">Agendar consulta</a>
-            <a class="btn btn--ghost" href="#servicos" data-track="cta_hero_servicos">Ver serviços</a>
+    <!-- ░░ HERO — carousel premium ░░ -->
+    <section class="hero hero-carousel" aria-label="Serviços premium da Dental Care" data-hero-carousel tabindex="0">
+      <div class="hero-carousel__slides">
+        <article class="hero-slide is-active" data-hero-slide>
+          <img
+            class="hero-slide__image"
+            src="https://images.pexels.com/photos/3845624/pexels-photo-3845624.jpeg?auto=compress&cs=tinysrgb&w=2200"
+            alt="Dentista utilizando tecnologia digital durante atendimento odontológico premium."
+            width="2200"
+            height="1467"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
+          <div class="hero-slide__overlay" aria-hidden="true"></div>
+          <div class="container hero-slide__content">
+            <p class="hero-slide__eyebrow">Tecnologia digital · Diagnóstico avançado</p>
+            <h1>Escaneamento Intraoral</h1>
+            <p>Tecnologia digital para diagnósticos precisos e planejamento mais eficiente.</p>
+            <a class="btn btn--primary hero-slide__cta" href="#agendar" data-track="hero_escaneamento">Agendar Avaliação</a>
           </div>
+        </article>
 
-          <ul class="trust-row" aria-label="Diferenciais rápidos">
-            <li><span class="dot"></span> Atendimento premium</li>
-            <li><span class="dot"></span> Planejamento digital</li>
-            <li><span class="dot"></span> Estética natural</li>
-          </ul>
+        <article class="hero-slide" data-hero-slide>
+          <img
+            class="hero-slide__image"
+            src="https://images.pexels.com/photos/6529107/pexels-photo-6529107.jpeg?auto=compress&cs=tinysrgb&w=2200"
+            alt="Planejamento digital odontológico em clínica moderna e iluminada."
+            width="2200"
+            height="1467"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="hero-slide__overlay" aria-hidden="true"></div>
+          <div class="container hero-slide__content">
+            <p class="hero-slide__eyebrow">Planejamento estético · Previsibilidade</p>
+            <h1>DSD — Sorriso Digital</h1>
+            <p>Visualize seu novo sorriso antes mesmo de iniciar o tratamento.</p>
+            <a class="btn btn--primary hero-slide__cta" href="#tecnologias" data-track="hero_dsd">Conhecer o Processo</a>
+          </div>
+        </article>
+
+        <article class="hero-slide" data-hero-slide>
+          <img
+            class="hero-slide__image"
+            src="https://images.pexels.com/photos/3845766/pexels-photo-3845766.jpeg?auto=compress&cs=tinysrgb&w=2200"
+            alt="Profissional odontológico em ambiente clínico moderno com registro de alta precisão."
+            width="2200"
+            height="1467"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="hero-slide__overlay" aria-hidden="true"></div>
+          <div class="container hero-slide__content">
+            <p class="hero-slide__eyebrow">Precisão clínica · Estética natural</p>
+            <h1>Fotografia Clínica</h1>
+            <p>Registros detalhados que garantem precisão e excelência nos resultados.</p>
+            <a class="btn btn--primary hero-slide__cta" href="#servicos" data-track="hero_fotografia">Saiba Mais</a>
+          </div>
+        </article>
+
+        <article class="hero-slide" data-hero-slide>
+          <img
+            class="hero-slide__image"
+            src="https://images.pexels.com/photos/4269693/pexels-photo-4269693.jpeg?auto=compress&cs=tinysrgb&w=2200"
+            alt="Paciente sorrindo em consulta odontológica estética com iluminação suave."
+            width="2200"
+            height="1467"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="hero-slide__overlay" aria-hidden="true"></div>
+          <div class="container hero-slide__content">
+            <p class="hero-slide__eyebrow">Estética premium · Resultado natural</p>
+            <h1>Clareamento Premium</h1>
+            <p>Mais brilho, segurança e naturalidade para transformar seu sorriso.</p>
+            <a class="btn btn--primary hero-slide__cta" href="#agendar" data-track="hero_clareamento">Quero Clarear Meu Sorriso</a>
+          </div>
+        </article>
+
+        <article class="hero-slide" data-hero-slide>
+          <img
+            class="hero-slide__image"
+            src="https://images.pexels.com/photos/3845806/pexels-photo-3845806.jpeg?auto=compress&cs=tinysrgb&w=2200"
+            alt="Atendimento odontológico estético em clínica clean com equipamento moderno."
+            width="2200"
+            height="1467"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="hero-slide__overlay" aria-hidden="true"></div>
+          <div class="container hero-slide__content">
+            <p class="hero-slide__eyebrow">Design do sorriso · Alto padrão</p>
+            <h1>Lentes e Facetas</h1>
+            <p>Soluções estéticas personalizadas para um sorriso impecável.</p>
+            <a class="btn btn--primary hero-slide__cta" href="#servicos" data-track="hero_facetas">Ver Transformações</a>
+          </div>
+        </article>
+
+        <article class="hero-slide" data-hero-slide>
+          <img
+            class="hero-slide__image"
+            src="https://images.pexels.com/photos/6812561/pexels-photo-6812561.jpeg?auto=compress&cs=tinysrgb&w=2200"
+            alt="Consulta odontológica premium com foco em harmonia estética e cuidado personalizado."
+            width="2200"
+            height="1467"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="hero-slide__overlay" aria-hidden="true"></div>
+          <div class="container hero-slide__content">
+            <p class="hero-slide__eyebrow">Harmonia facial · Sorriso natural</p>
+            <h1>Harmonização do Sorriso</h1>
+            <p>Equilíbrio entre estética facial e dental para resultados naturais.</p>
+            <a class="btn btn--primary hero-slide__cta" href="#agendar" data-track="hero_harmonizacao">Agendar Consulta</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="container hero-carousel__chrome" aria-label="Controles do destaque principal">
+        <div class="hero-carousel__progress" aria-live="polite">
+          <span data-hero-current>01</span>
+          <span> / 06</span>
         </div>
 
-        <div class="hero__visual" aria-hidden="true">
-          <div class="glass-card">
-            <div class="glass-card__top">
-              <div class="pill">Tecnologia & Estética</div>
-              <div class="spark"></div>
-            </div>
-            <div class="kpis">
-              <div class="kpi">
-                <div class="kpi__num">+3.2k</div>
-                <div class="kpi__label">Sorrisos planejados</div>
-              </div>
-              <div class="kpi">
-                <div class="kpi__num">4.9/5</div>
-                <div class="kpi__label">Avaliações</div>
-              </div>
-              <div class="kpi">
-                <div class="kpi__num">0h</div>
-                <div class="kpi__label">Fila de espera</div>
-              </div>
-            </div>
-            <div class="mini-tech">
-              <div class="mini-tech__item">Escaneamento intraoral</div>
-              <div class="mini-tech__item">DSD — Sorriso digital</div>
-              <div class="mini-tech__item">Fotografia clínica</div>
-            </div>
-          </div>
-          <div class="hero__glow"></div>
+        <div class="hero-carousel__dots" role="tablist" aria-label="Selecionar serviço">
+          <button class="hero-carousel__dot is-active" type="button" role="tab" aria-selected="true" aria-label="Ver Escaneamento Intraoral" data-hero-dot></button>
+          <button class="hero-carousel__dot" type="button" role="tab" aria-selected="false" aria-label="Ver DSD — Sorriso Digital" data-hero-dot></button>
+          <button class="hero-carousel__dot" type="button" role="tab" aria-selected="false" aria-label="Ver Fotografia Clínica" data-hero-dot></button>
+          <button class="hero-carousel__dot" type="button" role="tab" aria-selected="false" aria-label="Ver Clareamento Premium" data-hero-dot></button>
+          <button class="hero-carousel__dot" type="button" role="tab" aria-selected="false" aria-label="Ver Lentes e Facetas" data-hero-dot></button>
+          <button class="hero-carousel__dot" type="button" role="tab" aria-selected="false" aria-label="Ver Harmonização do Sorriso" data-hero-dot></button>
+        </div>
+
+        <div class="hero-carousel__arrows">
+          <button class="hero-carousel__arrow" type="button" aria-label="Slide anterior" data-hero-prev>
+            <span aria-hidden="true">←</span>
+          </button>
+          <button class="hero-carousel__arrow" type="button" aria-label="Próximo slide" data-hero-next>
+            <span aria-hidden="true">→</span>
+          </button>
         </div>
       </div>
     </section>

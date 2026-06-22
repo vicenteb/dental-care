@@ -56,6 +56,127 @@
     );
   }
 
+  // Hero carousel
+  const carousel = $("[data-hero-carousel]");
+  if (carousel) {
+    const slides = $$("[data-hero-slide]", carousel);
+    const dots = $$("[data-hero-dot]", carousel);
+    const prev = $("[data-hero-prev]", carousel);
+    const next = $("[data-hero-next]", carousel);
+    const currentEl = $("[data-hero-current]", carousel);
+    const autoplayMs = 5000;
+    let activeIndex = Math.max(0, slides.findIndex((slide) => slide.classList.contains("is-active")));
+    let autoplayTimer = null;
+    let swipeStartX = 0;
+    let swipeStartY = 0;
+
+    const formatIndex = (index) => String(index + 1).padStart(2, "0");
+
+    const setActiveSlide = (index, shouldResetTimer = true) => {
+      const nextIndex = (index + slides.length) % slides.length;
+      if (nextIndex === activeIndex && shouldResetTimer) {
+        restartAutoplay();
+        return;
+      }
+
+      slides.forEach((slide, slideIndex) => {
+        const active = slideIndex === nextIndex;
+        slide.classList.toggle("is-active", active);
+        slide.setAttribute("aria-hidden", String(!active));
+        $$("a, button, input, textarea, select, [tabindex]", slide).forEach((control) => {
+          control.tabIndex = active ? 0 : -1;
+        });
+      });
+
+      dots.forEach((dot, dotIndex) => {
+        const active = dotIndex === nextIndex;
+        dot.classList.toggle("is-active", active);
+        dot.setAttribute("aria-selected", String(active));
+        dot.tabIndex = active ? 0 : -1;
+      });
+
+      activeIndex = nextIndex;
+      if (currentEl) currentEl.textContent = formatIndex(activeIndex);
+      if (shouldResetTimer) restartAutoplay();
+    };
+
+    const showNext = (shouldResetTimer = true) => setActiveSlide(activeIndex + 1, shouldResetTimer);
+    const showPrev = (shouldResetTimer = true) => setActiveSlide(activeIndex - 1, shouldResetTimer);
+
+    function stopAutoplay() {
+      if (!autoplayTimer) return;
+      window.clearTimeout(autoplayTimer);
+      autoplayTimer = null;
+    }
+
+    function startAutoplay() {
+      if (prefersReducedMotion.matches || autoplayTimer) return;
+      autoplayTimer = window.setTimeout(() => {
+        autoplayTimer = null;
+        showNext(false);
+        startAutoplay();
+      }, autoplayMs);
+    }
+
+    function restartAutoplay() {
+      stopAutoplay();
+      startAutoplay();
+    }
+
+    prev?.addEventListener("click", () => showPrev());
+    next?.addEventListener("click", () => showNext());
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => setActiveSlide(index));
+    });
+
+    carousel.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") {
+        e.preventDefault();
+        showNext();
+      }
+      if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        showPrev();
+      }
+      if (e.key === "Home") {
+        e.preventDefault();
+        setActiveSlide(0);
+      }
+      if (e.key === "End") {
+        e.preventDefault();
+        setActiveSlide(slides.length - 1);
+      }
+    });
+
+    carousel.addEventListener("pointerdown", (e) => {
+      if (e.pointerType === "mouse") return;
+      swipeStartX = e.clientX;
+      swipeStartY = e.clientY;
+    }, { passive: true });
+
+    carousel.addEventListener("pointerup", (e) => {
+      if (e.pointerType === "mouse" || !swipeStartX) return;
+      const deltaX = e.clientX - swipeStartX;
+      const deltaY = Math.abs(e.clientY - swipeStartY);
+      swipeStartX = 0;
+      swipeStartY = 0;
+      if (Math.abs(deltaX) < 44 || deltaY > 70) return;
+      if (deltaX < 0) showNext();
+      else showPrev();
+    }, { passive: true });
+
+    carousel.addEventListener("mouseenter", stopAutoplay);
+    carousel.addEventListener("mouseleave", startAutoplay);
+    carousel.addEventListener("focusin", stopAutoplay);
+    carousel.addEventListener("focusout", (e) => {
+      if (carousel.contains(e.relatedTarget)) return;
+      startAutoplay();
+    });
+
+    setActiveSlide(activeIndex, false);
+    startAutoplay();
+  }
+
   // Scroll reveal motion
   const setupRevealMotion = () => {
     if (prefersReducedMotion.matches || !("IntersectionObserver" in window)) return;
@@ -69,13 +190,6 @@
     const markAll = (selector, type, { delay = 0, stagger = 80, root = document } = {}) => {
       $$(selector, root).forEach((el, index) => mark(el, type, delay + index * stagger));
     };
-
-    mark($(".hero .eyebrow"), "badge", 60);
-    mark($(".hero h1"), "heading", 150);
-    mark($(".hero .lead"), "text", 240);
-    mark($(".hero__ctas"), "text", 330);
-    mark($(".trust-row"), "text", 420);
-    mark($(".hero__visual"), "media", 300);
 
     $$(".section__head").forEach((head) => {
       mark($(".label-tag", head), "badge", 0);
