@@ -211,12 +211,34 @@ h3 { font-size: 1.1rem; font-weight: 600; }
   padding: .72rem 0;
 }
 
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  min-width: 0;
+}
+.brand__mark {
+  width: 49px;
+  height: 49px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
 .brand__name {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .16rem;
   font-family: var(--font-title);
   font-weight: 700;
   font-size: 1.2rem;
   letter-spacing: -0.03em;
+  line-height: 1;
+  white-space: nowrap;
+}
+.brand__name-dental {
   color: var(--teal);
+}
+.brand__name-care {
+  color: #579464;
 }
 
 .nav { position: relative; }
@@ -1129,13 +1151,29 @@ input:focus {
   .footer__grid { grid-template-columns: 1.2fr 0.7fr 1.1fr; }
 }
 .footer__brand {
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
   font-family: var(--font-title);
   font-weight: 700;
   font-size: 1.2rem;
   letter-spacing: -.03em;
   color: #fff;
   margin-bottom: .6rem;
+  line-height: 1;
+}
+.footer__brand-mark {
+  width: 49px;
+  height: 49px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+.footer__brand-name {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .16rem;
+  color: #fff;
+  white-space: nowrap;
 }
 .footer__title {
   font-family: var(--font-title);
