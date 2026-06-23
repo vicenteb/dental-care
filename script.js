@@ -177,6 +177,69 @@
     startAutoplay();
   }
 
+  // Before/after comparison slider
+  $$("[data-before-after]").forEach((comparison) => {
+    const range = $("[data-before-after-range]", comparison);
+    if (!range) return;
+
+    let isSliding = false;
+
+    const updateComparison = () => {
+      const value = Number(range.value);
+      const clampedValue = Math.min(100, Math.max(0, value));
+      comparison.style.setProperty("--position", `${clampedValue}%`);
+      range.setAttribute("aria-valuetext", `${clampedValue}% depois`);
+    };
+
+    const updateFromPointer = (clientX) => {
+      const rect = comparison.getBoundingClientRect();
+      const percent = ((clientX - rect.left) / rect.width) * 100;
+      range.value = String(Math.round(Math.min(100, Math.max(0, percent))));
+      updateComparison();
+    };
+
+    range.addEventListener("input", updateComparison);
+    range.addEventListener("change", updateComparison);
+    range.addEventListener("keydown", (e) => {
+      const step = e.shiftKey ? 10 : 2;
+      const keys = {
+        ArrowLeft: -step,
+        ArrowDown: -step,
+        ArrowRight: step,
+        ArrowUp: step,
+        Home: -100,
+        End: 100,
+      };
+      if (!(e.key in keys)) return;
+      e.preventDefault();
+      const nextValue = e.key === "Home" || e.key === "End"
+        ? (e.key === "Home" ? 0 : 100)
+        : Number(range.value) + keys[e.key];
+      range.value = String(Math.min(100, Math.max(0, nextValue)));
+      updateComparison();
+    });
+
+    comparison.addEventListener("pointerdown", (e) => {
+      if (e.button && e.button !== 0) return;
+      isSliding = true;
+      comparison.setPointerCapture?.(e.pointerId);
+      range.focus({ preventScroll: true });
+      updateFromPointer(e.clientX);
+      e.preventDefault();
+    });
+    comparison.addEventListener("pointermove", (e) => {
+      if (!isSliding) return;
+      updateFromPointer(e.clientX);
+    });
+    ["pointerup", "pointercancel", "lostpointercapture"].forEach((eventName) => {
+      comparison.addEventListener(eventName, () => {
+        isSliding = false;
+      });
+    });
+
+    updateComparison();
+  });
+
   // Scroll reveal motion
   const setupRevealMotion = () => {
     if (prefersReducedMotion.matches || !("IntersectionObserver" in window)) return;
