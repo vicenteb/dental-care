@@ -755,6 +755,10 @@ h3 { font-size: 1.1rem; font-weight: 600; }
 }
 
 /* ---------- SERVIÇOS ---------- */
+#servicos {
+  padding-bottom: 3rem;
+}
+
 .service-grid {
   display: grid;
   gap: 1rem;
@@ -764,7 +768,7 @@ h3 { font-size: 1.1rem; font-weight: 600; }
   .service-grid { grid-template-columns: repeat(2,1fr); }
 }
 @media (min-width: 900px) {
-  .service-grid { grid-template-columns: repeat(4,1fr); }
+  .service-grid { grid-template-columns: repeat(3,1fr); }
 }
 
 .service {
@@ -815,18 +819,6 @@ h3 { font-size: 1.1rem; font-weight: 600; }
   text-decoration: underline;
   text-underline-offset: 4px;
   transform: translateX(2px);
-}
-
-.service--highlight {
-  display: flex;
-  flex-direction: column;
-  background: linear-gradient(135deg, rgba(17,75,95,0.05), rgba(26,147,111,0.06));
-  border-color: rgba(26,147,111,0.16);
-}
-.service--highlight h3 { color: var(--teal); }
-.service--highlight .btn {
-  width: 100%;
-  margin-top: auto;
 }
 
 .before-after {
@@ -944,6 +936,104 @@ h3 { font-size: 1.1rem; font-weight: 600; }
 .before-after:focus-within {
   outline: 3px solid rgba(26,147,111,0.28);
   outline-offset: 3px;
+}
+
+/* ---------- RESULTADOS ---------- */
+.section--results {
+  background:
+    linear-gradient(180deg, var(--white) 0%, var(--off-white) 100%);
+  border-top: 1px solid rgba(17,75,95,0.06);
+  color: var(--ink);
+  padding-top: 3rem;
+}
+.section--results h2,
+.section--results h3 { color: var(--teal); }
+.section--results .subtitle { color: var(--ink-muted); }
+
+.results-showcase {
+  display: grid;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+@media (min-width: 920px) {
+  .results-showcase {
+    grid-template-columns: minmax(0, 1.45fr) minmax(280px, .75fr);
+  }
+}
+
+.results-showcase__media {
+  min-width: 0;
+}
+.before-after--feature {
+  margin: 0;
+  aspect-ratio: 1.28 / 1;
+  min-height: 260px;
+  border-radius: var(--radius);
+  border-color: rgba(17,75,95,0.14);
+  box-shadow: 0 28px 70px rgba(17,75,95,0.18);
+}
+.before-after--feature .before-after__label {
+  top: .85rem;
+}
+.before-after--feature .before-after__label--before { left: .85rem; }
+.before-after--feature .before-after__label--after { right: .85rem; }
+.before-after--feature .before-after__handle {
+  width: 48px;
+  height: 48px;
+}
+@media (min-width: 760px) {
+  .before-after--feature {
+    aspect-ratio: 1080 / 500;
+    min-height: 300px;
+  }
+}
+
+.results-showcase__content {
+  max-width: 37rem;
+}
+.results-showcase__content .subtitle {
+  margin-top: .75rem;
+}
+.results-showcase__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  margin: 1.35rem 0 1.6rem;
+}
+.results-showcase__chips span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: .45rem .72rem;
+  border-radius: 999px;
+  background: rgba(17,75,95,0.05);
+  border: 1px solid rgba(17,75,95,0.10);
+  color: var(--teal);
+  font-family: var(--font-title);
+  font-size: .74rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.results-showcase__cta {
+  width: 100%;
+}
+
+@media (max-width: 699px) {
+  .section--results {
+    padding-top: 3.6rem;
+  }
+  .results-showcase {
+    gap: 1.6rem;
+  }
+  .results-showcase__content {
+    text-align: left;
+  }
+  .results-showcase__chips span {
+    flex: 1 1 calc(50% - .55rem);
+    justify-content: center;
+    text-align: center;
+  }
 }
 
 /* ---------- VALORES / TECNOLOGIAS ---------- */

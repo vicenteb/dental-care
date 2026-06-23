@@ -261,6 +261,17 @@
     });
 
     markAll(".service-grid .service", "card", { stagger: 90 });
+
+    const results = $("#resultados .results-showcase");
+    if (results) {
+      mark($(".results-showcase__media", results), "media", 0);
+      mark($(".results-showcase__content .label-tag", results), "badge", 90);
+      mark($(".results-showcase__content h2", results), "heading", 170);
+      mark($(".results-showcase__content .subtitle", results), "text", 250);
+      markAll(".results-showcase__chips span", "text", { delay: 320, stagger: 60, root: results });
+      mark($(".results-showcase__cta", results), "text", 480);
+    }
+
     markAll(".values .value", "card", { stagger: 100 });
     markAll(".cards .card", "card", { stagger: 100 });
     markAll(".faq .faq__item", "card", { stagger: 70 });
